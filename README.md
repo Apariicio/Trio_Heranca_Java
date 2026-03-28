@@ -1,2 +1,2 @@
-# Trio_Heran-a_Java
+# Trio_Heranca_Java
 projeto simples com herança usando toda hierarquia
