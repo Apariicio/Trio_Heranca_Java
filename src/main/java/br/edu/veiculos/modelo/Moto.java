@@ -7,8 +7,19 @@ public class Moto extends Veiculo {
         super();
     }
 
-    public Moto(String marca, String modelo, String cor, int anoDeFabricacao) {
+    public Moto(String marca, String modelo, String cor, int anoDeFabricacao, int numeroDeCilindros, boolean temBau, boolean eletrica) {
         super(marca, modelo, cor, anoDeFabricacao);
+        this.numeroDeCilindros = numeroDeCilindros;
+        this.temBau = temBau;
+        this.eletrica = eletrica;
+    }
+
+    public int getNumeroDeCilindros() {
+        return numeroDeCilindros;
+    }
+
+    public void setTemBau(boolean temBau) {
+        this.temBau = temBau;
     }
 
     public void acelerar() {
@@ -19,6 +30,15 @@ public class Moto extends Veiculo {
     System.out.println("Reduzindo aceleração...");
 }
 
+    public boolean isTemBau(){
+        return temBau;
+
+    }
+
+    public boolean isEletrica(){
+        return eletrica;
+    }
+
     public void abirBau() {
     System.out.println("Abrindo o Baú");
 }
@@ -27,7 +47,7 @@ public class Moto extends Veiculo {
     System.out.println("Fechando Baú");
 }
     public void contarCilindros(int cilindro) {
-    System.out.println("Tem " + cilindro "disponíveis");
+    System.out.println("Tem " + cilindro + "disponíveis");
 }
 
     @Override
@@ -38,14 +58,15 @@ public class Moto extends Veiculo {
 
     @Override
     public void buzinar() {
-        System.out.println("Biiiii!");
+        System.out.println("Beeep Beeep!");
     }
 
     @Override
     public String toString() {
         return super.toString()
-                + "\nCilindros: " + numeroDeCilindros;
-                + "\nBau: " + (temBau ? "Sim" : "Não");
+                + "\nCilindros: " + numeroDeCilindros
+                + "\nPossui Bau: " + (temBau ? "Sim" : "Não")
+                + "\nÉ elétrica: " + (eletrica ? "Sim" : "Não");
     }
 
 }

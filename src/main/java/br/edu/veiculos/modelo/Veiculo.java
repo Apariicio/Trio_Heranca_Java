@@ -1,8 +1,8 @@
 public class Veiculo {
-    public String marca;
-    public String modelo;
-    public String cor;
-    public int anoDeFabricacao;
+    private String marca;
+    private String modelo;
+    private String cor;
+    private int anoDeFabricacao;
 
     public Veiculo (){
 
@@ -34,13 +34,13 @@ public class Veiculo {
     }
 
     public void motor(){
-        System.out.println("Vruumm!")
+        System.out.println("Vruumm!");
     }
 
     public String toString(){
         return "\nMarca: " + marca
                 +"\nModelo: " + modelo
                 +"\nCor: " + cor
-                +"\nAno de Fabricação: " + anoDeFabricacao
+                +"\nAno de Fabricação: " + anoDeFabricacao;
     }
 }

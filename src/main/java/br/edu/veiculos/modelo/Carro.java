@@ -7,8 +7,34 @@ public class Carro extends Veiculo {
         super();
     }
 
-    public Carro(String marca, String modelo, String cor, int anoDeFabricacao) {
-        super(marca, modelo, cor, anoDeFabricacao);
+    public Carro(String marca, String modelo, String cor, int anoDeFabricacao, int numeroDePortas, boolean automatico) {
+        super(marca, modelo, cor, anoDeFabricacao); 
+        this.numeroDePortas = numeroDePortas; 
+        this.automatico = automatico;
+    }
+
+    public int getNumeroDePortas() {
+        return numeroDePortas;
+    }
+
+    public void setNumeroDePortas(int numeroDePortas) {
+        this.numeroDePortas = numeroDePortas;
+    }
+
+    public boolean isTemArCondicionado() {
+        return temArCondicionado;
+    }
+
+    public void setTemArCondicionado(boolean temArCondicionado) {
+        this.temArCondicionado = temArCondicionado;
+    }
+
+    public boolean isAutomatico() {
+        return automatico;
+    }
+
+    public void setAutomatico(boolean automatico) {
+        this.automatico = automatico;
     }
 
     public void abrirPorta() {
@@ -20,10 +46,12 @@ public class Carro extends Veiculo {
 }
 
     public void ligarArCondicionado() {
+        this.temArCondicionado = true;
     System.out.println("Ar-condicionado ligado");
 }
 
     public void desligarArCondicionado() {
+        this.temArCondicionado = false;
     System.out.println("Ar-condicionado desligado");
 }
     public void trocarMarcha(int marcha) {
@@ -45,6 +73,7 @@ public class Carro extends Veiculo {
     public String toString() {
         return super.toString()
                 + "\nPortas: " + numeroDePortas
+                + "\nAutomático: " + (automatico ? "Sim": "Não")
                 + "\nAr-condicionado: " + (temArCondicionado ? "Sim" : "Não");
     }
 
