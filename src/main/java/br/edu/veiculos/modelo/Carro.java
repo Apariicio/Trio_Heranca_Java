@@ -7,10 +7,11 @@ public class Carro extends Veiculo {
         super();
     }
 
-    public Carro(String marca, String modelo, String cor, int anoDeFabricacao, int numeroDePortas, boolean automatico) {
+    public Carro(String marca, String modelo, String cor, int anoDeFabricacao, int numeroDePortas, boolean automatico, boolean temArCondicionado) {
         super(marca, modelo, cor, anoDeFabricacao); 
         this.numeroDePortas = numeroDePortas; 
         this.automatico = automatico;
+        this.temArCondicionado = temArCondicionado;
     }
 
     public int getNumeroDePortas() {
