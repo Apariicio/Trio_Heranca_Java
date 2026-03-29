@@ -36,14 +36,14 @@ public class Main{
                 System.out.print("É automático? (S/N): ");
                 char autoChar = sc.next().toUpperCase().charAt(0);
                 boolean isAutomatico = (autoChar == 'S');
-                sc.nextLine();
+                System.out.print("Possui ar-condicionado? (S/N): ");
+                char arChar = sc.next().toUpperCase().charAt(0);
+                boolean isTemAr = (arChar == 'S');
 
-                Carro c1 = new Carro(marca, modelo, cor, ano, portas, isAutomatico);
+                Carro c1 = new Carro(marca, modelo, cor, ano, portas, isAutomatico, isTemAr);
 
                 System.out.print("\nDados do Cadastro do Carro");
                 System.out.print(c1.toString());
-                c1.trocarMarcha(1);
-                c1.ligarArCondicionado();
                 
                 System.out.println();
                 System.out.println("\nTestando Funçoes do Carro");
@@ -51,7 +51,12 @@ public class Main{
                 c1.buzinar();
                 c1.abrirPorta();
                 c1.fecharPorta();
-                c1.ligarArCondicionado();
+                c1.trocarMarcha(1);
+                if (isTemAr) {
+                    c1.ligarArCondicionado();
+                } else {
+                    System.out.println("Este carro não possui ar-condicionado para testar.");
+                }
 
             }
             else if (opcao == 2){
@@ -83,9 +88,14 @@ public class Main{
                 m1.motor();
                 m1.buzinar();
                 m1.acelerar();
-                m1.abirBau();
-                m1.fecharBau();
                 m1.reduziraceleracao();
+                if (isTemBau) {
+                    m1.abirBau();
+                    m1.fecharBau();
+                } else {
+                    System.out.println("Esta moto não possui baú para testar.");
+                }
+                
 
             }
             else if (opcao == 3){
