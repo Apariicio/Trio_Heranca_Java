@@ -46,10 +46,12 @@ public class Carro extends Veiculo {
 }
 
     public void ligarArCondicionado() {
+        this.temArCondicionado = true;
     System.out.println("Ar-condicionado ligado");
 }
 
     public void desligarArCondicionado() {
+        this.temArCondicionado = false;
     System.out.println("Ar-condicionado desligado");
 }
     public void trocarMarcha(int marcha) {
